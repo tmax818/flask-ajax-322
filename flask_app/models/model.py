@@ -1,4 +1,4 @@
-from flask_app.config.mysqlconnection import connectToMySQL
+
 import requests
 
 DATABASE = 'models_schema'
