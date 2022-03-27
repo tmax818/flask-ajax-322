@@ -7,8 +7,7 @@ def index():
 
 @app.route('/github')
 def github():
-    name = "tmax818"
-    endpoint = f"https://api.github.com/users/{name}"
-    res = requests.get(endpoint)
+    res = {"user_name":"tmax818"}
+    
     return res.json()
 
