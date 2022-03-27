@@ -5,3 +5,10 @@ from flask_app import app
 def index():
     return render_template('index.html')
 
+@app.route('/github')
+def github():
+    name = "tmax818"
+    endpoint = f"https://api.github.com/users/{name}"
+    res = requests.get(endpoint)
+    return res.json()
+
