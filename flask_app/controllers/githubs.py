@@ -13,7 +13,6 @@ def github_form():
     print(request.form)
     res = Github.data_for_html(request.form['name'])
     session['data'] = {**res}
-
     return redirect('/github_info')
 
 

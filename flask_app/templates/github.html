@@ -8,13 +8,22 @@
     <title>index</title>
 </head>
 <body>
+    {{session['data']}}
     <h1>Github</h1>
     <form action="/handle/github" method="post">
         <input type="text" name="name">
         <input type="submit" value="submit">
     </form>
     {% if 'data' in session %}
-        <img src="{{session['data']['avatar_url']}}" alt="">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{session['data']['avatar_url']}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{session['data']['name']}}</h5>
+              <p class="card-text">{{session['data']['bio']}}</p>
+              <a href="{{session['data']['html_url']}}" class="btn btn-secondary">GitHub</a>
+            </div>
+          </div>
     {% endif %}
 </body>
 </html>
