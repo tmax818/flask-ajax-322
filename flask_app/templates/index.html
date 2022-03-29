@@ -9,13 +9,35 @@
 </head>
 <body>
 <!-- As a link -->
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/weather">weather</a>
+        <a class="nav-item nav-link" href="/weather/json">weather json</a>
+        <a class="nav-item nav-link" href="/github_info">GitHub API</a>
+        
+
+      </div>
+    </div>
   </nav>
-  
-  <!-- As a heading -->
-  <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-  </nav>
+  {% if weather %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        {{weather.name}}
+      </div>
+      <div class="col-sm">
+       {{weather.weather[0]['description']}}
+      </div>
+      <div class="col-sm">
+        {{weather.main['temp']}} degrees
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </body>
 </html>

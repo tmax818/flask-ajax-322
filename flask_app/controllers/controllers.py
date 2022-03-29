@@ -7,15 +7,14 @@ from flask_app.models.model import Model
 def index():
     return render_template('index.html')
 
-@app.route('/github')
-def github():
-    res = {"user_name":"tmax818"}
-    
-    return jsonify(res)
-
 
 @app.route('/weather')
 def weather():
+    weather = Model.weather()
+    return render_template('index.html', weather = Model.weather())
+
+@app.route('/weather/json')
+def weather_json():
     weather = Model.weather()
     return jsonify(weather)
 
