@@ -13,10 +13,6 @@ def github():
     
     return jsonify(res)
 
-@app.route('/github2')
-def github2():
-    data = Model.data()
-    return jsonify(data)
 
 @app.route('/weather')
 def weather():
