@@ -1,5 +1,5 @@
 from flask import render_template, jsonify
-from flask_app import app, cross_origin
+from flask_app import app, cross_origin, cors
 
 from flask_app.models.model import Model
 
